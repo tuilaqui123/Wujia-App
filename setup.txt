@@ -1,0 +1,32 @@
+- voucher ? 
+- rank ảnh hưởng đến số ly để đc miễn phí, rank cao thì đc 
+- đặt 10 ly đc 1 ly miễn phí
+- register thêm upload ảnh 
+- loading screen
+- không được huỷ liên tục 3 đwơn 
+- lưu hình ảnh upload lúc tạo tài khoản về (file upload)
+
+*
+bottom tab
+navbar cố định
+bỏ paytab -> chuyển xuống bottom tab
+các thông báo (xoá, thêm,...)
+định dạng user 
+thêm nút huỷ đơn đã đặt(lí do huỷ, lưu lại lí do huỷ)
+thêm nút huỷ đơn trong giỏ hàng (thêm thông báo)
+đưa các pass prop, function lên context hết
+search
+set radio chọn đường và đá 
+hiển thị trạng thái đơn hàng (có thể đặt nhiều đơn hàng/ hoàn thành đơn do admin (ko cần làm nhiều))
+đặt lại đơn hàng (lịch sử đơn hàng)
+khi đặt hàng thì giỏ hàng trống
+nút mũi tên dropdown ở filter
+kiểm tra lại chính tả
+check sdt đúng định dạng
+
+? 
+- đổi sang firestore / save hình ảnh 
+- tối ưu tốc độ load
+- sản phẩm description
+- pay 
+    + địa chỉ (vị trí hiện tại sử dụng api gg, đặt cho tôi hoặc đặt cho người khác (set địa chỉ))
