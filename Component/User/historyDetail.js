@@ -38,10 +38,14 @@ const HistoryDetail = ({ controlDetail, CloseDetail, item }) => {
                                     />
                                     <View style={styles.infoContent}>
                                         <View>
-                                            <InfoOrder
-                                                name={"Topping thêm"}
-                                                content={value.ItemTopping}
-                                            />
+                                            {value.ItemTopping ? (
+                                                <InfoOrder
+                                                    name={"Topping thêm"}
+                                                    content={value.ItemTopping}
+                                                />
+                                            ) : (
+                                                <View></View>
+                                            )}
 
                                             <View style={styles.icontainer}>
                                                 <Text>Lượng đường</Text>

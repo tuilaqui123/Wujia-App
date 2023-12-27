@@ -5,13 +5,14 @@ import ButtonX from "../Component/Button/buttonX";
 import OrderItems from "../Component/Order/orderItem";
 import { AppContext } from "../context/AppContext";
 import ConfirmNoti from "../Component/Button/confirmNoti";
+import Noti from '../Component/Login/notification'
 
 const Order = ({ navigation, route }) => {
 
     const { OrderItem, setOrderItem,
         subAmount, setSubAmount,
         subTotal, setSubTotal,
-        location
+        location, isLog
     } = useContext(AppContext)
 
     const [popup, setPopup] = useState(false)
@@ -24,6 +25,12 @@ const Order = ({ navigation, route }) => {
         setPopup(false)
     }
 
+    const [popupNoti, setPopupNoti] = useState(false)
+
+    function closePopupNoti() {
+        setPopupNoti(false)
+    }
+
     function Confirm() {
         setPopup(false)
         setOrderItem([])
@@ -32,7 +39,8 @@ const Order = ({ navigation, route }) => {
     }
 
     function GoToPay() {
-        navigation.navigate('Pay')
+        if (isLog) navigation.navigate('Pay')
+        else setPopupNoti(true)
     }
 
     function GoBack(go) {
@@ -85,6 +93,11 @@ const Order = ({ navigation, route }) => {
                         popup={popup}
                         closePopup={closePopup}
                         Confirm={Confirm}
+                    />
+                    <Noti
+                        popup={popupNoti}
+                        closePopup={closePopupNoti}
+                        title={'Hãy đăng nhập để thanh toán!!'}
                     />
                 </View>
             ) : (

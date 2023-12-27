@@ -24,6 +24,7 @@ const Register = ({ navigation, route }) => {
         location, setLocation
     } = useContext(AppContext)
 
+    const [success, setSuccess] = useState(false)
     const [Email, setemail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -71,7 +72,7 @@ const Register = ({ navigation, route }) => {
                 setPopup(true)
             } else {
                 if (password == confirmPassword) {
-                    set(ref(database, 'ACCOUNT/' + email), {
+                    set(ref(database, 'ACCOUNT/' + Email), {
                         UserInfo: {
                             username: Email,
                             password: password,
@@ -86,7 +87,7 @@ const Register = ({ navigation, route }) => {
                     })
                     setNotiContext('Đăng kí thành công!!')
                     setPopup(true)
-                    GoToLogin(true)
+                    setSuccess(true)
                 }
                 else {
                     setNotiContext('Xác nhận mật khẩu không đúng!!')
@@ -97,8 +98,10 @@ const Register = ({ navigation, route }) => {
         });
     }
 
+
     function closePopup(close) {
         if (close) setPopup(false);
+        if (success) GoToLogin(true)
     }
 
     return (
