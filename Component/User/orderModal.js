@@ -49,6 +49,9 @@ const OrderModal = ({ controlOrder, Close }) => {
     function DeleteOrder(id) {
         var deleteIndex = id - parseInt(userRanks.amount) - 1
         setOrderList(prevSetTemp => prevSetTemp.filter((_, index) => index !== deleteIndex));
+        set(ref(database, 'ACCOUNT/' + email + '/OrderList'), {
+            List: OrderList
+        })
     }
 
 

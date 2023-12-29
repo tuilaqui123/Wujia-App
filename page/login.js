@@ -115,11 +115,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        height: '100%',
         alignItems: 'center',
     },
     main: {
-        height: '100%',
         width: '100%',
         alignItems: 'center',
         justifyContent: 'flex-start',

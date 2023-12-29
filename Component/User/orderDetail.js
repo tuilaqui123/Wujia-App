@@ -130,13 +130,12 @@ const OrderDetail = ({ controlDetail, CloseDetail, id, item, DeleteOrder }) => {
                                         </View>
                                         <View style={styles.Section}>
                                             <Text>Topping thêm:</Text>
-                                            {value.ItemTopping.map((topping, index) =>
-
+                                            {value.ItemTopping && value.ItemTopping.map((topping, index) => (
                                                 <View style={styles.sectionItem} key={index}>
                                                     <Text>{topping.name}</Text>
                                                     <Text>+{topping.price}đ</Text>
                                                 </View>
-                                            )}
+                                            ))}
                                         </View>
                                         <View style={styles.Section}>
                                             <Text>Lượng đường:</Text>

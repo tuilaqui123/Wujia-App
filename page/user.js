@@ -8,6 +8,8 @@ import OrderModal from "../Component/User/orderModal";
 import HistoryModal from "../Component/User/historyModal";
 import ConfirmNoti from "../Component/Button/confirmNoti";
 import RankNoti from "../Component/User/rankInfo";
+import { database } from "../firebaseConfig";
+import { ref, onValue, set } from 'firebase/database';
 
 const User = ({ navigation }) => {
 
@@ -30,6 +32,8 @@ const User = ({ navigation }) => {
 
     const [userNoti, setUserNoti] = useState('')
 
+
+    console.log(OrderList)
 
     useEffect(() => {
         var data = userRanks.total
@@ -64,6 +68,9 @@ const User = ({ navigation }) => {
     }
 
     function LogOut() {
+        set(ref(database, 'ACCOUNT/' + email + '/OrderList'), {
+            List: OrderList
+        })
         setEmail('')
         setIsLog(false)
 

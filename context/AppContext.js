@@ -64,6 +64,7 @@ export const AppProvider = ({ children }) => {
             setUserInfo([])
             setUserRanks([])
             setUserHistory([])
+            setOrderList([])
         }
         else {
 
@@ -77,8 +78,19 @@ export const AppProvider = ({ children }) => {
             onValue(Ranks, (snapshot) => {
                 const data = snapshot.val();
                 setUserRanks(data)
-
             });
+
+            const List = ref(database, 'ACCOUNT/' + email + '/OrderList/List');
+
+            onValue(List, (snapshot) => {
+                const data = snapshot.val();
+
+                // Check if data is not null or undefined before updating the state
+                if (data !== null && data !== undefined) {
+                    setOrderList(data);
+                }
+            });
+
 
             const itemRef = ref(database, 'ACCOUNT/' + email + '/UserHistory');
 

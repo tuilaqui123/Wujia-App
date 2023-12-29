@@ -20,6 +20,8 @@ const OrderedItem = ({ item, id, DeleteOrder }) => {
         setCtrlDetail(false)
     }
 
+    console.log(item)
+
     return (
         <>
             <TouchableOpacity style={styles.orderContainer} onPress={openDetail}>
@@ -54,13 +56,12 @@ const OrderedItem = ({ item, id, DeleteOrder }) => {
                                 </View>
                                 <View style={styles.Section}>
                                     <Text>Topping thêm:</Text>
-                                    {value.ItemTopping.map((topping, index) =>
-
+                                    {value.ItemTopping && value.ItemTopping.map((topping, index) => (
                                         <View style={styles.sectionItem} key={index}>
                                             <Text>{topping.name}</Text>
                                             <Text>+{topping.price}đ</Text>
                                         </View>
-                                    )}
+                                    ))}
                                 </View>
                                 <View style={styles.Section}>
                                     <Text>Lượng đường:</Text>
