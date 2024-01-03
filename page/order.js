@@ -103,7 +103,7 @@ const Order = ({ navigation, route }) => {
             ) : (
                 <View style={[styles.container, { paddingBottom: 0 }]}>
                     <View style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                        <Text>Không có sản phẩm nào!</Text>
+                        <Text style={{ fontSize: 20, fontStyle: 600 }}>Không có sản phẩm nào!</Text>
                     </View>
                 </View>
             )}

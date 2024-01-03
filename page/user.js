@@ -183,9 +183,9 @@ const User = ({ navigation }) => {
                     />
                 </View>
             ) : (
-                <View style={styles.container}>
+                <View style={[styles.container, { backgroundColor: '#fff' }]}>
                     <View style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                        <Text style={{ fontSize: 20, fontStyle: 600 }}>Hãy đăng nhập để đặt hàng!</Text>
+                        <Text style={{ fontSize: 20, fontStyle: 600, marginBottom: 20 }}>Hãy đăng nhập để đặt hàng!</Text>
                         <TouchableOpacity
                             style={styles.btnL}
                             onPress={() => navigation.navigate('Login')}

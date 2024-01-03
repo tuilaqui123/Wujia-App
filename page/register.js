@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { faEnvelope, faFile } from '@fortawesome/free-regular-svg-icons';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import Input from '../Component/Login/input';
 import Noti from '../Component/Login/notification';
 import ButtonX from '../Component/Button/buttonX';
@@ -112,7 +112,7 @@ const Register = ({ navigation, route }) => {
                     style={{ width: 100, height: 100 }}
                     source={require('../assets/icon.png')}
                 />
-                <Input placeholderText={"Email"} iconName={faEnvelope} GetEmail={GetEmail} />
+                <Input placeholderText={"Số điện thoại"} iconName={faPhone} GetEmail={GetEmail} />
                 <Input placeholderText={"Mật khẩu"} iconName={faLock} GetPassword={GetPassword} isSecure={true} />
                 <Input placeholderText={"Xác nhận lại mật khẩu"} iconName={faLock} GetConfirmPassword={GetConfirmPassword} isSecure={true} />
                 <Input placeholderText={"Họ"} iconName={faFile} GetHo={GetHo} />
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingTop: 40,
+        paddingTop: 20,
 
     },
     header: {

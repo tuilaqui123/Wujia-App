@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import Input from '../Component/Login/input';
 import Noti from '../Component/Login/notification';
 import ButtonX from '../Component/Button/buttonX';
@@ -90,7 +90,7 @@ const Login = ({ navigation, route }) => {
                     style={{ width: 100, height: 100 }}
                     source={require('../assets/icon.png')}
                 />
-                <Input placeholderText={"Email"} iconName={faEnvelope} GetEmail={GetEmail} />
+                <Input placeholderText={"Số điện thoại"} iconName={faPhone} GetEmail={GetEmail} />
                 <Input placeholderText={"Mật khẩu"} iconName={faLock} GetPassword={GetPassword} isSecure={true} />
                 <TouchableOpacity style={styles.forgotTouch}>
                     <Text style={styles.forgotPass} onPress={GotoRegister}>Chưa có tài khoản? Đăng kí ngay</Text>
